@@ -53,19 +53,30 @@ function onClickTheme() {
 }
 
 // Используем localStorage для сохранения темы при перезагрузки.Получаем данние значения ключа
-refs.addTheme.addEventListener("change", saveTheme)
+ saveTheme()
     
-    function saveTheme() {
+function saveTheme() {
     
-    let background = localStorage.getItem("background");
+    let theme = localStorage.getItem('background');
+    //сохранение светлой темы
+    
+    if (theme === Theme.LIGHT || theme === null) {
 
-    if (background) {
+         refs.body.classList.add(Theme.LIGHT);
+        refs.body.classList.remove(Theme.DARK);
+
+        refs.addTheme.checked = false
+
+        // сохранение тёмной темы
+    } else {
         
-        // refs.body.className += background;
-        
-        //ставим свойство checked в положении true штобы при перезагрузки не сдвигалса ползунок
+        refs.body.classList.add(Theme.DARK)
+        refs.body.classList.remove(Theme.LIGHT)
+     // ставим свойство true для ползунка когда тёмная тема
+     refs.addTheme.checked = true
 
-        refs.addTheme.checked = true;
-    } 
 
+    }
+   
+  
 }
