@@ -52,14 +52,14 @@ function onClickTheme() {
 
 }
 
-// Используем localStorage для сохранения темы при перезагрузки.Получаем данние значения ключа
+// Используем localStorage для сохранения темы при перезагрузке.Получаем данние значения ключа
  saveTheme()
     
 function saveTheme() {
     
     let theme = localStorage.getItem('background');
     
-    //сохранение светлой темы
+    //сохранение светлой темы при перезагрузке
 
     if (theme === Theme.LIGHT || theme === null) {
 
@@ -68,7 +68,7 @@ function saveTheme() {
 
         refs.addTheme.checked = false
 
-        // сохранение тёмной темы
+        // сохранение тёмной темы при перезагрузке
     } else {
         
         refs.body.classList.add(Theme.DARK)
