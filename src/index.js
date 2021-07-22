@@ -38,7 +38,7 @@ function onClickTheme() {
         refs.body.classList.add(Theme.DARK)
         refs.body.classList.remove(Theme.LIGHT)
 
-        // Используем localStorage для сохранения темы при перезагрузки.сохраняем данные пару ключ/значение
+        // Используем localStorage для сохранения темы(сохраняем данные пару ключ/значение)
         localStorage.setItem('background', Theme.DARK);
         
         
@@ -46,7 +46,7 @@ function onClickTheme() {
         refs.body.classList.add(Theme.LIGHT);
         refs.body.classList.remove(Theme.DARK);
         localStorage.removeItem('theme');
- // Используем localStorage для сохранения темы при перезагрузки.сохраняем данные пару ключ/значение
+ // Используем localStorage для сохранения темы(сохраняем данные пару ключ/значение) 
          localStorage.setItem('background', Theme.LIGHT)
     }
 
@@ -58,8 +58,9 @@ function onClickTheme() {
 function saveTheme() {
     
     let theme = localStorage.getItem('background');
-    //сохранение светлой темы
     
+    //сохранение светлой темы
+
     if (theme === Theme.LIGHT || theme === null) {
 
          refs.body.classList.add(Theme.LIGHT);
