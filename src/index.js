@@ -45,7 +45,7 @@ function onClickTheme() {
     } else {
         refs.body.classList.add(Theme.LIGHT);
         refs.body.classList.remove(Theme.DARK);
-        localStorage.removeItem('theme');
+       
  // Используем localStorage для сохранения темы(сохраняем данные пару ключ/значение) 
          localStorage.setItem('background', Theme.LIGHT)
     }
